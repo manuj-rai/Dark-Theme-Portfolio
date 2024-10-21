@@ -28,6 +28,7 @@ function deleteText() {
 // Start the typing animation
 type();
 
+
 function showSection(section) {
     // Hide all sections
     document.querySelectorAll('section').forEach(function (sec) {
@@ -36,7 +37,27 @@ function showSection(section) {
     
     // Show the selected section
     document.querySelector('.' + section).style.display = 'flex';
+
+    document.querySelectorAll('nav a').forEach(link => {
+        link.classList.remove('active');
+    });
+
+    const activeLink = document.querySelector(`nav a[onclick*="${sectionId}"]`);
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
 }
 
 // Initialize the view by showing only the home section
 showSection('home');
+
+// Show specific section of About (Skills, Experience, Education)
+function showAboutSection(aboutSection) {
+    // Hide all About subsections
+    document.querySelectorAll('.about-content').forEach(function (about) {
+        about.style.display = 'none';
+    });
+
+    // Show the selected About subsection
+    document.querySelector('.' + aboutSection).style.display = 'block';
+}

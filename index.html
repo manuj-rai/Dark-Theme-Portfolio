@@ -9,17 +9,18 @@
     <title>Manuj Portfolio</title>
 </head>
 <body>
+
     <header>
         <a href="#" class="logo">Manuj</a>
-
         <nav>
-            <a href="#" class="active"> Home</a>
-            <a href="#" >About</a>
-            <a href="#" >Project</a>
-            <a href="#" >Contact</a>
+            <a onclick="showSection('home')" class="active"> Home</a>
+            <a onclick="showSection('about')" >About</a>
+            <a onclick="showSection('projects')" >Project</a>
+            <a onclick="showSection('contact')" >Contact</a>
         </nav>
     </header>
-    <section class="home">
+
+    <section class="home" id="home">
         <div class="home-img">
             <img src="assets/main2.jpg" alt="">
         </div>
@@ -36,6 +37,57 @@
             <a href="#" class="btn">Hire me</a>
         </div>
     </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h1>About Me</h1>
+        <p>A brief introduction about yourself...</p>
+
+        <div class="about-navigation">
+            <button onclick="showAboutSection('skills')">Skills</button>
+            <button onclick="showAboutSection('experience')">Experience</button>
+            <button onclick="showAboutSection('education')">Education</button>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="about-content skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Web Development (HTML, CSS, JavaScript, ASP.NET)</li>
+                <li>Database Management (SQL, MySQL)</li>
+                <li>Version Control (Git, GitHub)</li>
+                <li>Problem Solving and Debugging</li>
+            </ul>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="about-content experience" style="display:none">
+            <h2>Experience</h2>
+            <p>Software Developer at XYZ Company (2018 - Present)</p>
+            <ul>
+                <li>Developed full-stack web applications using .NET and SQL.</li>
+                <li>Led the development of key features for a client project.</li>
+                <li>Worked with cross-functional teams to deliver successful solutions.</li>
+            </ul>
+        </div>
+
+        <!-- Education Section -->
+        <div class="about-content education" style="display:none">
+            <h2>Education</h2>
+            <p>Bachelor's in Computer Science - ABC University (2014 - 2018)</p>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h1>Projects</h1>
+        <p>Details about your projects will go here...</p>
+    </section>
+
+    <section class="contact" id="contact">
+        <h1>Contact</h1>
+        <p>Contact details will go here...</p>
+    </section>
+
     <div class="button-container">
         <button class="button" onclick="showSection('home')">
             <svg
