@@ -206,6 +206,41 @@ span{
     }
 }
 
+.button-container {
+  display: none;
+  background-color: black;
+  width: 100vw;
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  justify-content: space-around;
+  border-top: 1px solid #2f2f2f;
+}
+
+.button {
+  outline: 0 !important;
+  border: 0 !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b74b4b;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 20px;
+}
+
 @media (max-width: 1000px){
     .home{
         gap: 4rem;
@@ -226,8 +261,11 @@ span{
     }
 
     .home-img img{
-        width: 70vw;
+        width: 60vw;
         margin-top: 4rem;
+    }
+    .button-container{
+        display: flex;
     }
 }
 
