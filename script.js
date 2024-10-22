@@ -1,6 +1,6 @@
 const words = ["Software", "Developer", "Programmer", "Developer"];
 const typingDelay = 150; // Delay between each letter
-const wordDelay = 2000; // Delay between words
+const wordDelay = 150; // Delay between words
 let wordIndex = 0;
 let letterIndex = 0;
 
@@ -61,3 +61,27 @@ function showAboutSection(aboutSection) {
     // Show the selected About subsection
     document.querySelector('.' + aboutSection).style.display = 'block';
 }
+
+
+// function to recieve email from contact section
+(function() {
+            emailjs.init("YLgMP-bH8XBeKf4xe"); // Replace with your EmailJS public key
+        })();
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the default way
+
+            emailjs.send("service_d2do4oo", "template_w9xflfn", {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            })
+            .then(function(response) {
+                document.getElementById('responseMessage').innerText = 'Message sent successfully!';
+                console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+                document.getElementById('responseMessage').innerText = 'Error sending message.';
+                console.log('FAILED...', error);
+            });
+        });
+

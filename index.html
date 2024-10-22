@@ -7,138 +7,174 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Manuj Portfolio</title>
+    <link rel="icon" href="assets/portfolio.png" type="image/png" />
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
 
-    <header>
-        <a href="#" class="logo">Manuj</a>
-        <nav>
-            <a onclick="showSection('home')" class="active"> Home</a>
-            <a onclick="showSection('about')" >About</a>
-            <a onclick="showSection('projects')" >Project</a>
-            <a onclick="showSection('contact')" >Contact</a>
-        </nav>
-    </header>
+<!-- Desktop Navbar -->
+<header>
+    <a href="#" class="logo">Manuj</a>
+    <nav>
+        <a class="active" onclick="showSection('home')" > Home</a>
+        <a onclick="showSection('about')" >About</a>
+        <a onclick="showSection('projects')" >Project</a>
+        <a onclick="showSection('contact')" >Contact</a>
+    </nav>
+</header>
 
-    <section class="home" id="home">
-        <div class="home-img">
-            <img src="assets/main2.jpg" alt="">
+<!-- Home Section -->
+<section class="home" id="home">
+    <div class="home-img">
+        <img src="assets/main2.jpg" alt="">
+    </div>
+    <div class="home-content">
+        <h1>Hi, It's <span>Manuj</span></h1>
+        <h3 class="typing-text">I'm a <span id="typedText"></span></h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus labore dolores esse. </p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/manujrai/"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/manuj-rai"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/manuj_rai_official"><i class="fa-brands fa-instagram"></i></a>
         </div>
-        <div class="home-content">
-            <h1>Hi, It's <span>Manuj</span></h1>
-            <h3 class="typing-text">I'm a <span id="typedText"></span></h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus labore dolores esse. </p>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/manujrai/"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/manuj-rai"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.instagram.com/manuj_rai_official"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-            <a href="#" class="btn">Hire me</a>
+        <a href="#" class="btn">Hire me</a>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <img src="assets/IMG_0257.jpeg" alt="">
+    <div class="about-para">
+    <h1>About Me</h1>
+    <p>A brief introduction about yourself...</p>
+
+    <div class="about-navigation">
+        <button onclick="showAboutSection('skills')">Skills</button>
+        <button onclick="showAboutSection('experience')">Experience</button>
+        <button onclick="showAboutSection('education')">Education</button>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="about-content skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Web Development (HTML, CSS, JavaScript, ASP.NET)</li>
+            <li>Database Management (SQL, MySQL)</li>
+            <li>Version Control (Git, GitHub)</li>
+            <li>Problem Solving and Debugging</li>
+        </ul>
+    </div>
+
+    <!-- Experience Section -->
+    <div class="about-content experience" style="display:none">
+        <h2>Experience</h2>
+        <p>Software Developer at XYZ Company (2018 - Present)</p>
+        <ul>
+            <li>Developed full-stack web applications using .NET and SQL.</li>
+            <li>Led the development of key features for a client project.</li>
+            <li>Worked with cross-functional teams to deliver successful solutions.</li>
+        </ul>
+    </div>
+
+    <!-- Education Section -->
+    <div class="about-content education" style="display:none">
+        <h2>Education</h2>
+        <p>Bachelor's in Computer Science - ABC University (2014 - 2018)</p>
+    </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="projects" id="projects">
+    <h1>Projects</h1>
+    <p>Details about your projects will go here...</p>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <img src="assets/main.jpg" alt="">
+    <form id="contactForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Your Name">
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <h1>About Me</h1>
-        <p>A brief introduction about yourself...</p>
-
-        <div class="about-navigation">
-            <button onclick="showAboutSection('skills')">Skills</button>
-            <button onclick="showAboutSection('experience')">Experience</button>
-            <button onclick="showAboutSection('education')">Education</button>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Your Email">
         </div>
-
-        <!-- Skills Section -->
-        <div class="about-content skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>Web Development (HTML, CSS, JavaScript, ASP.NET)</li>
-                <li>Database Management (SQL, MySQL)</li>
-                <li>Version Control (Git, GitHub)</li>
-                <li>Problem Solving and Debugging</li>
-            </ul>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required placeholder="Your Message" rows="5"></textarea>
         </div>
+        <button type="submit" class="contact-botton">Send Message</button>
+        <div id="successMessage" class="success-message" style="display:none;">Your message has been sent!</div>
+    </form>
+</section>
 
-        <!-- Experience Section -->
-        <div class="about-content experience" style="display:none">
-            <h2>Experience</h2>
-            <p>Software Developer at XYZ Company (2018 - Present)</p>
-            <ul>
-                <li>Developed full-stack web applications using .NET and SQL.</li>
-                <li>Led the development of key features for a client project.</li>
-                <li>Worked with cross-functional teams to deliver successful solutions.</li>
-            </ul>
-        </div>
+<!-- Mobile Navbar -->
+<div class="button-container">
+    <button class="button" onclick="showSection('home')">
+        <svg
+        class="icon"
+        stroke="currentColor"
+        fill="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        height="1em"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+        >
+        <path
+            d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"
+        ></path>
+        </svg>
+    </button>
 
-        <!-- Education Section -->
-        <div class="about-content education" style="display:none">
-            <h2>Education</h2>
-            <p>Bachelor's in Computer Science - ABC University (2014 - 2018)</p>
-        </div>
-    </section>
+    <button class="button" onclick="showSection('about')">
+        <svg class="icon" 
+        xmlns="http://www.w3.org/2000/svg" 
+        viewBox="0 0 24 24" 
+        width="1em" 
+        height="1em" 
+        fill="none" 
+        stroke="currentColor" 
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+        </svg>
+    </button>
+    <button class="button" onclick="showSection('projects')">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+        fill="currentColor" 
+        viewBox="0 0 24 24" 
+        width="20" 
+        height="20">
+            <path d="M21 3H3C1.346 3 0 4.346 0 6v12c0 1.654 1.346 3 3 3h18c1.654 0 3-1.346 3-3V6c0-1.654-1.346-3-3-3zm-10 14H3v-2h8v2zm12-4H3v-2h18v2zm0-4H3V7h18v2z"></path>
+        </svg>
+    </button>
 
-    <section class="projects" id="projects">
-        <h1>Projects</h1>
-        <p>Details about your projects will go here...</p>
-    </section>
-
-    <section class="contact" id="contact">
-        <h1>Contact</h1>
-        <p>Contact details will go here...</p>
-    </section>
-
-    <div class="button-container">
-        <button class="button" onclick="showSection('home')">
-            <svg
-            class="icon"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 1024 1024"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-            >
-            <path
-                d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"
-            ></path>
-            </svg>
-        </button>
-
-        <button class="button" onclick="showSection('about')">
-            <svg class="icon" 
-            xmlns="http://www.w3.org/2000/svg" 
-            viewBox="0 0 24 24" 
-            width="1em" 
-            height="1em" 
-            fill="none" 
-            stroke="currentColor" 
-            stroke-width="2" 
-            stroke-linecap="round" 
-            stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="16" x2="12" y2="12"></line>
-                <line x1="12" y1="8" x2="12" y2="8"></line>
-            </svg>
-        </button>
-        <button class="button" onclick="showSection('projects')">
-            <svg xmlns="http://www.w3.org/2000/svg" 
-            fill="currentColor" 
-            viewBox="0 0 24 24" 
-            width="20" 
-            height="20">
-                <path d="M21 3H3C1.346 3 0 4.346 0 6v12c0 1.654 1.346 3 3 3h18c1.654 0 3-1.346 3-3V6c0-1.654-1.346-3-3-3zm-10 14H3v-2h8v2zm12-4H3v-2h18v2zm0-4H3V7h18v2z"></path>
-            </svg>
-        </button>
-
-        <button class="button" onclick="showSection('contact')">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="7" r="4" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M4 21V17C4 15.8954 4.89543 15 6 15H18C19.1046 15 20 15.8954 20 17V21" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>       
-     </div>
+    <button class="button" onclick="showSection('contact')">
+        <svg
+        class="icon"
+        stroke="currentColor"
+        fill="currentColor"
+        stroke-width="0"
+        viewBox="0 0 24 24"
+        height="1em"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+        >
+        <path
+            d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z"
+        ></path>
+        </svg>
+    </button>       
+</div>
+     
 <script src="script.js"></script>
 </body>
 </html>

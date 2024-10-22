@@ -23,7 +23,6 @@ body{
 }
 
 header{
-    margin-top: 20px;
     position: fixed;
     top: 0;
     left: 0;
@@ -213,7 +212,7 @@ span{
   display: none;
   background-color: black;
   width: 100vw;
-  height: 40px;
+  height: 45px;
   position: fixed;
   bottom: 0;
   align-items: center;
@@ -243,26 +242,171 @@ span{
 .icon {
   font-size: 20px;
 }
+/* About */
 
-.about{
-    display: flex;
+.about {
+    background-color: #000; /* Dark black background */
+    color: #fff; /* White text for contrast */
+    padding: 50px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
     flex-direction: column;
+    padding-top: 100px;
 }
 
+/* Main heading */
+.about h1 {
+    font-size: 36px;
+    color: #b74b4b; /* Red theme color */
+    margin-bottom: 20px;
+}
+
+/* Paragraph styling */
+.about p {
+    font-size: 18px;
+    color: #ccc; /* Light gray for better readability */
+    margin-bottom: 30px;
+}
+
+/* Navigation buttons */
+.about-navigation {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;    
+}
+
+.about-navigation button {
+    background-color: #b74b4b; /* Red button background */
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px; /* Adjust margin for spacing */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.about-navigation button:hover {
+    background-color: #b74b4b; /* Darker red on hover */
+}
+
+/* About content sections */
+.about-content {
+    display: none; /* Hidden by default */
+    margin-top: 30px;
+}
+
+/* Display active section */
+.about-content.active {
+    display: block;
+}
+
+/* Section headings */
+.about-content h2 {
+    font-size: 28px;
+    color: #b74b4b; /* Red for section headings */
+    margin-bottom: 20px;
+}
+
+/* List items in the skills section */
+.about-content ul {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+    color: #ccc; /* Light gray for list items */
+}
+
+.about-content ul li {
+    margin: 10px 0;
+    text-align: left;
+}
+
+/* Paragraphs for experience and education */
+.about-content p {
+    font-size: 18px;
+    color: #ccc; /* Light gray text */
+    text-align: left;
+}
+
+/*  Projects */
 .projects{
     display: flex;
     flex-direction: column;
 }
 
-.contact{
-    display: flex;
+/* General styles for the Contact section */
+.contact {
+    background-color: #000; /* Dark black background */
+    color: #fff; /* White text */
+    padding: 50px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
     flex-direction: column;
+    padding-top: 50px;
 }
 
+/* Main heading */
+.contact h1 {
+    font-size: 36px;
+    color: #b74b4b; /* Red theme color */
+    margin-bottom: 20px;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; /* Align labels to the left */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Full width */
+    padding: 10px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    background-color: #222; /* Darker background for inputs */
+    color: #fff; /* White text */
+}
+
+button.contact-botton {
+    background-color: #c0392b; /* Red button background */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button.contact-botton:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
+.success-message {
+    margin-top: 20px;
+    color: #2ecc71; /* Green for success message */
+    font-weight: bold;
+}
 
 @media (max-width: 1000px){
     .home{
         gap: 2rem;
+    }
+
+     button.contact-botton {
+        width: 100%; /* Make button full width */
     }
 }
 
@@ -282,9 +426,33 @@ span{
     .home-img img{
         width: 60vw;
     }
-    
+
     .button-container{
         display: flex;
+    }
+    
+     button.contact-botton {
+        width: 100%; /* Make button full width */
+    }
+    .about{
+        padding-top:50px;
+    }
+    .contact {
+        padding: 60px 30px 45px; /* Less padding on smaller screens */
+    }
+
+    .contact h1 {
+        font-size: 28px; /* Smaller heading font size */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 16px; /* Smaller font size */
+    }
+
+    button.contact-botton {
+        font-size: 16px; /* Smaller font size for button */
     }
 }
 
