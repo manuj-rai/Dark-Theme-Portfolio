@@ -38,15 +38,18 @@ function showSection(section) {
     // Show the selected section
     document.querySelector('.' + section).style.display = 'flex';
 
+    // Remove 'active' class from all links
     document.querySelectorAll('nav a').forEach(link => {
         link.classList.remove('active');
     });
 
-    const activeLink = document.querySelector(`nav a[onclick*="${sectionId}"]`);
+    // Add 'active' class to the correct link
+    const activeLink = document.querySelector(`nav a[onclick*="${section}"]`);
     if (activeLink) {
         activeLink.classList.add('active');
     }
 }
+
 
 // Initialize the view by showing only the home section
 showSection('home');

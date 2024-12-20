@@ -433,6 +433,9 @@ button.contact-botton:hover {
     .home-content h1{
         font-size: 1rem;
     }
+    .home-content p{
+        display: none;
+    }
 
     .home-img img{
         width: 60vw;
