@@ -242,15 +242,16 @@ span{
 .icon {
   font-size: 20px;
 }
-/* About */
 
+/* About */
 .about {
     background-color: #000; /* Dark black background */
     color: #fff; /* White text for contrast */
     padding: 50px;
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     border-radius: 10px;
+    align-items: center;
     flex-direction: row;
     padding-top: 100px;
 }
@@ -266,16 +267,17 @@ span{
 .about-header h2 {
     font-size: 4.5rem;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .accent {
-    color: #b74b4b; /* Accent color */
+    color: #b74b4b; 
 }
 
 .tabs {
     display: flex;
     gap: 20px;
-    margin-bottom: 30px;
+    margin: 30px;
 }
 
 .tab-btn {
@@ -294,6 +296,7 @@ span{
 
 .tab-btn.active {
     color: #b74b4b;
+    border-bottom: 2px solid #b74b4b;
 }
 
 .tab-content {
@@ -311,55 +314,37 @@ span{
     display: block;
 }
 
-.skills-list {
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    justify-content: center;
-    gap: 40px;
     flex-wrap: wrap;
+    gap: 20px;
+    font-size: 20px;
+    justify-content: center;
 }
 
-.skill-item {
-    padding: 20px;
-    width: 200px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.skill-item:hover {
-    transform: scale(1.1);
-}
-
-.icon-container {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-.skill-info h4 {
+.skill {
     font-size: 1.2rem;
-    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    background-color: #2d2d2d; 
+    color: #fff; 
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.skill-info p {
-    font-size: 0.9rem;
-    color: #666;
+.skill:hover {
+    cursor: pointer;
+    background-color: #b74b4b; 
+    transform: scale(1.05); 
 }
 
-/* Icons */
-.html-icon::before {
-    content: '\f13b'; /* FontAwesome HTML Icon */
-    font-family: 'FontAwesome';
-}
-
-.css-icon::before {
-    content: '\f13c'; /* FontAwesome CSS Icon */
-    font-family: 'FontAwesome';
-}
-
-.js-icon::before {
-    content: '\f0d0'; /* FontAwesome JavaScript Icon */
-    font-family: 'FontAwesome';
+.skill i {
+    font-size: 1.6rem; 
 }
 
 /*  Projects */
@@ -370,8 +355,8 @@ span{
 
 /* General styles for the Contact section */
 .contact {
-    background-color: #000; /* Dark black background */
-    color: #fff; /* White text */
+    background-color: #000; 
+    color: #fff; 
     padding: 50px;
     text-align: center;
     font-family: Arial, sans-serif;
@@ -478,6 +463,10 @@ button.contact-botton:hover {
         width: 100%;
         padding: 70px 10px;
         flex-direction: column;
+    }
+
+    .about-header h2 {
+        font-size: 4rem;
     }
 
     .tabs {
