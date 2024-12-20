@@ -159,7 +159,7 @@ span{
     border: 0.2rem solid #b74b4b;
     font-size: 2rem;
     border-radius: 50%;
-    margin: 0.5rem 1.5rem 2rem 0;
+    margin: 3.5rem 1.5rem 3.5rem 0;
     transition: 0.3s ease;
     color: #b74b4b;
 }
@@ -433,8 +433,13 @@ button.contact-botton:hover {
     .home-content h1{
         font-size: 1rem;
     }
+
     .home-content p{
         display: none;
+    }
+
+    .social-icons a{
+        margin: 0.5rem 1.5rem 2.5rem 0;
     }
 
     .home-img img{
