@@ -119,10 +119,6 @@ section{
     background-color: black;
 }
 
-.home-content {
-    z-index: 9;
-}
-
 .home .home-content h1{
     font-size: 4rem;
     font-weight: 700;
@@ -175,6 +171,7 @@ span{
     transition: 0.3s ease;
     color: #b74b4b;
     z-index: 9;
+    position: relative;
 }
 
 .social-icons a:hover{
@@ -196,6 +193,8 @@ span{
     border: 2px solid #b74b4b;
     transition: 0.3s ease;
     cursor: pointer;
+    z-index: 9;
+    position: relative;
 }
 
 .btn:hover{
