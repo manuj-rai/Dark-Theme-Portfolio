@@ -104,23 +104,105 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // function to recieve email from contact section
 (function() {
-            emailjs.init("YLgMP-bH8XBeKf4xe"); // Replace with your EmailJS public key
-        })();
+    emailjs.init("YLgMP-bH8XBeKf4xe"); // Replace with your EmailJS public key
+})();
 
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting the default way
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting the default way
 
-            emailjs.send("service_d2do4oo", "template_w9xflfn", {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            })
-            .then(function(response) {
-                document.getElementById('responseMessage').innerText = 'Message sent successfully!';
-                console.log('SUCCESS!', response.status, response.text);
-            }, function(error) {
-                document.getElementById('responseMessage').innerText = 'Error sending message.';
-                console.log('FAILED...', error);
-            });
+    emailjs.send("service_d2do4oo", "template_w9xflfn", {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    })
+    .then(function(response) {
+        document.getElementById('responseMessage').innerText = 'Message sent successfully!';
+        console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+        document.getElementById('responseMessage').innerText = 'Error sending message.';
+        console.log('FAILED...', error);
+    });
+});
+
+
+
+        // Initialize particles.js
+        particlesJS("particles-js", {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#ff0000"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 2,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#b74b4b",
+                    opacity: 0.5,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 3,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    }
+                }
+            },
+            retina_detect: true
         });
-
