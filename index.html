@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
     <title>Manuj Portfolio</title>
     <link rel="icon" href="assets/portfolio.png" type="image/png" />
@@ -16,10 +17,10 @@
 <header>
     <a href="#" class="logo">Manuj</a>
     <nav>
-        <a href="javascript:void(0)" class="active" onclick="showSection('home')" > Home</a>
-        <a href="javascript:void(0)" onclick="showSection('about')" >About</a>
-        <a href="javascript:void(0)" onclick="showSection('projects')" >Project</a>
-        <a href="javascript:void(0)" onclick="showSection('contact')" >Contact</a>
+        <a href="#" class="active" onclick="showSection('home')" > Home</a>
+        <a href="#" onclick="showSection('about')" >About</a>
+        <a href="#" onclick="showSection('projects')" >Project</a>
+        <a href="#" onclick="showSection('contact')" >Contact</a>
     </nav>
 </header>
 
@@ -44,46 +45,76 @@
 
 <!-- About Section -->
 <section class="about" id="about">
-    <img src="assets/IMG_0257.jpeg" alt="">
-    <div class="about-para">
-    <h1>About Me</h1>
-    <p>A brief introduction about yourself...</p>
+    <div class="container">
+        <!-- Header -->
+        <div class="about-header">
+            <h2>Captivating <span class="accent">stories</span> birth magnificent designs.</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
 
-    <div class="about-navigation">
-        <button onclick="showAboutSection('skills')">Skills</button>
-        <button onclick="showAboutSection('experience')">Experience</button>
-        <button onclick="showAboutSection('education')">Education</button>
-    </div>
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="skills">Skills</button>
+            <button class="tab-btn" data-tab="experience">Experience</button>
+            <button class="tab-btn" data-tab="credentials">Credentials</button>
+        </div>
 
-    <!-- Skills Section -->
-    <div class="about-content skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Web Development (HTML, CSS, JavaScript, ASP.NET)</li>
-            <li>Database Management (SQL, MySQL)</li>
-            <li>Version Control (Git, GitHub)</li>
-            <li>Problem Solving and Debugging</li>
-        </ul>
-    </div>
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Skills -->
+            <div id="skills" class="tab-panel active">
+                <h3>Skills</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="icon-container">
+                            <i class="html-icon"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>HTML</h4>
+                            <p>Hypertext Markup Language</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="icon-container">
+                            <i class="css-icon"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>CSS</h4>
+                            <p>Cascading Style Sheets</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="icon-container">
+                            <i class="js-icon"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>JavaScript</h4>
+                            <p>Programming Language for Web Development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Experience Section -->
-    <div class="about-content experience" style="display:none">
-        <h2>Experience</h2>
-        <p>Software Developer at XYZ Company (2018 - Present)</p>
-        <ul>
-            <li>Developed full-stack web applications using .NET and SQL.</li>
-            <li>Led the development of key features for a client project.</li>
-            <li>Worked with cross-functional teams to deliver successful solutions.</li>
-        </ul>
-    </div>
+            <!-- Experience -->
+            <div id="experience" class="tab-panel">
+                <h3>Experience</h3>
+                <ul>
+                    <li>Web Developer - F2F (2024 - Present)</li>
+                    <li>Intern - F2F (2024)</li>
+                </ul>
+            </div>
 
-    <!-- Education Section -->
-    <div class="about-content education" style="display:none">
-        <h2>Education</h2>
-        <p>Bachelor's in Computer Science - ABC University (2014 - 2018)</p>
-    </div>
+            <!-- Credentials -->
+            <div id="credentials" class="tab-panel">
+                <h3>Credentials</h3>
+                <ul>
+                    <li>BBA-CA - Pune University (2024)</li>
+                </ul>
+            </div>
+        </div>            
     </div>
 </section>
+
 
 <!-- Projects Section -->
 <section class="projects" id="projects">

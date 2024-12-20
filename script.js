@@ -36,7 +36,10 @@ function showSection(section) {
     });
     
     // Show the selected section
-    document.querySelector('.' + section).style.display = 'flex';
+    const selectedSection = document.querySelector('.' + section);
+    if (selectedSection) {
+        selectedSection.style.display = 'flex';
+    }
 
     // Remove 'active' class from all links
     document.querySelectorAll('nav a').forEach(link => {
@@ -48,22 +51,55 @@ function showSection(section) {
     if (activeLink) {
         activeLink.classList.add('active');
     }
+
+    // Save the active section to localStorage
+    localStorage.setItem('activeSection', section);
 }
 
+// On page load, check if there's an active section in localStorage
+window.addEventListener('DOMContentLoaded', function () {
+    const activeSection = localStorage.getItem('activeSection');
+    
+    if (activeSection) {
+        // If there's a saved active section in localStorage, show it
+        showSection(activeSection);
+    } else {
+        // Default to the first section if no active section is found
+        showSection('section1'); // Ensure 'section1' is the class of your first section
+    }
+});
 
-// Initialize the view by showing only the home section
-showSection('home');
 
-// Show specific section of About (Skills, Experience, Education)
-function showAboutSection(aboutSection) {
-    // Hide all About subsections
-    document.querySelectorAll('.about-content').forEach(function (about) {
-        about.style.display = 'none';
+// script.js
+document.addEventListener('DOMContentLoaded', function () {
+    // Get all the tab buttons and panels
+    const tabs = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+
+    // Add click event listener to each tab button
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            // Remove 'active' class from all tabs and panels
+            tabs.forEach(t => t.classList.remove('active'));
+            panels.forEach(panel => panel.classList.remove('active'));
+
+            // Add 'active' class to the clicked tab and the corresponding panel
+            tab.classList.add('active');
+            const tabContent = document.getElementById(tab.getAttribute('data-tab'));
+            tabContent.classList.add('active');
+        });
     });
 
-    // Show the selected About subsection
-    document.querySelector('.' + aboutSection).style.display = 'block';
-}
+    // Set the first tab (Skills) as active by default, if not already set in HTML
+    const defaultTab = document.querySelector('.tab-btn[data-tab="skills"]');
+    if (defaultTab && !document.getElementById('skills').classList.contains('active')) {
+        defaultTab.classList.add('active');
+        const defaultPanel = document.getElementById(defaultTab.getAttribute('data-tab'));
+        if (defaultPanel) {
+            defaultPanel.classList.add('active');
+        }
+    }
+});
 
 
 // function to recieve email from contact section
