@@ -16,7 +16,7 @@ html{
 
 body{
     width: 100%;
-    background-color: black;
+    background: url("https://img.freepik.com/free-vector/halloween-cobweb-background-style_23-2148626623.jpg?t=st=1734936292~exp=1734939892~hmac=d16556a352c40e22fc0d6d89576acba3746ab22049149cba62aa36ab1109d6a3&w=740");
     color: white;
 }
 
@@ -36,7 +36,7 @@ header{
     width: 100%;
     padding: 1rem 9%;
     background-color: transparent;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -219,7 +219,7 @@ span{
 
 .button-container {
   display: none;
-  background-color: black;
+  background: blur(10px);
   width: 100vw;
   height: 60px;
   position: fixed;
@@ -254,8 +254,7 @@ span{
 
 /* About */
 .about {
-    background-color: #000; /* Dark black background */
-    color: #fff; /* White text for contrast */
+    color: #fff; 
     padding: 50px;
     text-align: center;
     font-family: 'Poppins', sans-serif;
