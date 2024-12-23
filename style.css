@@ -46,7 +46,7 @@ header{
 
 .logo{
     font-size: 3rem;
-    color: #b74b4b;
+    color: #e10000;
     font-weight: 800;
     cursor: pointer;
     transition: 0.5s ease;
@@ -68,8 +68,8 @@ nav a{
 
 nav a:hover,
 nav a.active{
-    color: #b74b4b;
-    border-bottom: 3px solid #b74b4b;
+    color: #e10000;
+    border-bottom: 3px solid #e10000;
 }
 
 @media(max-width:995px){
@@ -79,8 +79,8 @@ nav a.active{
         top: 0;
         right: 0;
         width: 40%;
-        border-left: 3px solid #b74b4b;
-        border-bottom: 3px solid #b74b4b;
+        border-left: 3px solid #e10000;
+        border-bottom: 3px solid #e10000;
         border-bottom-left-radius: 2rem;
         padding: 1rem solid;
         background-color: #161616;
@@ -101,7 +101,7 @@ nav a.active{
     nav a.active{
         padding: 1rem;
         border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #b74b4b;
+        border-bottom: 0.5rem solid #e10000;
     }
 }
 
@@ -125,7 +125,7 @@ section{
 }
 
 span{
-    color: #b74b4b;
+    color: #e10000;
 }
 
 .home-content h3{
@@ -146,7 +146,7 @@ span{
     position: relative;
     width: 40vw;
     border-radius: 50%;
-    box-shadow: 0 0 25px solid #b74b4b;
+    box-shadow: 0 0 25px solid #e10000;
     cursor: pointer;
     transition: 0.2s linear;
 }
@@ -163,12 +163,12 @@ span{
     width: 4rem;
     height: 4rem;
     background-color: transparent;
-    border: 0.2rem solid #b74b4b;
+    border: 0.2rem solid #e10000;
     font-size: 2rem;
     border-radius: 50%;
     margin: 3.5rem 1.5rem 3.5rem 0;
     transition: 0.3s ease;
-    color: #b74b4b;
+    color: #e10000;
     z-index: 9;
     position: relative;
 }
@@ -176,8 +176,8 @@ span{
 .social-icons a:hover{
     color: black;
     transform: scale(1.3) translateY(-5px);
-    background-color: #b74b4b;
-    box-shadow: 0  0 25px #b74b4b;
+    background-color: #e10000;
+    box-shadow: 0  0 25px #e10000;
 }
 
 .btn{
@@ -186,10 +186,10 @@ span{
     background-color: black;
     border-radius: 4rem;
     font-size: 1.6rem;
-    color: #b74b4b;
+    color: #e10000;
     letter-spacing: 0.3rem;
     font-weight: 600;
-    border: 2px solid #b74b4b;
+    border: 2px solid #e10000;
     transition: 0.3s ease;
     cursor: pointer;
     z-index: 9;
@@ -198,9 +198,9 @@ span{
 
 .btn:hover{
     transform: scale3d(1.03);
-    background-color: #b74b4b;
+    background-color: #e10000;
     color: black;
-    box-shadow: 0 0 25px #b74b4b;
+    box-shadow: 0 0 25px #e10000;
 }
 
 .typing-text {
@@ -241,7 +241,7 @@ span{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #b74b4b;
+  color: #e10000;
   transition: all ease-in-out 0.3s;
   cursor: pointer;
 }
@@ -282,7 +282,7 @@ span{
 }
 
 .accent {
-    color: #b74b4b; 
+    color: #e10000; 
 }
 
 .tabs {
@@ -303,12 +303,12 @@ span{
 }
 
 .tab-btn:hover {
-    color: #b74b4b;
+    color: #e10000;
 }
 
 .tab-btn.active {
-    color: #b74b4b;
-    border-bottom: 2px solid #b74b4b;
+    color: #e10000;
+    border-bottom: 2px solid #e10000;
 }
 
 .tab-content {
@@ -352,7 +352,7 @@ span{
 
 .skill:hover {
     cursor: pointer;
-    background-color: #b74b4b; 
+    background-color: #e10000; 
     transform: scale(1.05); 
 }
 
@@ -381,7 +381,7 @@ span{
 /* Main heading */
 .contact h1 {
     font-size: 36px;
-    color: #b74b4b; /* Red theme color */
+    color: #e10000; /* Red theme color */
     margin-bottom: 20px;
 }
 
@@ -410,7 +410,7 @@ textarea {
 }
 
 button.contact-botton {
-    background-color: #c0392b; /* Red button background */
+    background-color: #e10000; /* Red button background */
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -422,7 +422,7 @@ button.contact-botton {
 
 /* Button hover effect */
 button.contact-botton:hover {
-    background-color: #c0392b; /* Darker red on hover */
+    background-color: #e10000; /* Darker red on hover */
 }
 
 .success-message {
