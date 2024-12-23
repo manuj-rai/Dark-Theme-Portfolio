@@ -139,7 +139,7 @@ span{
 }
 
 .home-img{
-    border-radius: 50%;
+    filter: drop-shadow(2px 4px 6px black);
 }
 
 .home-img img{
