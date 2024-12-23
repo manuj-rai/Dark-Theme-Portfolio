@@ -224,12 +224,12 @@ span{
   display: none;
   background-color: black;
   width: 100vw;
-  height: 45px;
+  height: 60px;
   position: fixed;
   bottom: 0;
   align-items: center;
   justify-content: space-around;
-  border-top: 1px solid #2f2f2f;
+  border-top: 0.1px solid #2f2f2f;
 }
 
 .button {
@@ -434,7 +434,7 @@ button.contact-botton:hover {
 
 @media (max-width: 1000px){
     .home{
-        gap: 2rem;
+        gap: 5rem;
     }
 
      button.contact-botton {
@@ -445,6 +445,17 @@ button.contact-botton:hover {
 @media(max-width:995px){
     .home{
         flex-direction: column;
+        padding: 10px;
+    }
+
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 2rem;
     }
 
     .home .home-content h3{
@@ -469,6 +480,7 @@ button.contact-botton:hover {
 
     .button-container{
         display: flex;
+        z-index: 999;
     }
     
     button.contact-botton {
@@ -482,7 +494,8 @@ button.contact-botton:hover {
     }
 
     .about-header h2 {
-        font-size: 4rem;
+        font-size: 3.5rem;
+        margin: 20px 10px;
     }
 
     .tabs {
