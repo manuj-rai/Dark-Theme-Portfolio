@@ -140,6 +140,10 @@ span{
     font-size: 1.8rem;
     font-weight: 500;
 }
+
+.social-icons {
+    z-index: 999;
+}
 .social-icons a{
     display: inline-flex;
     justify-content: center;
